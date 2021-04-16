@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <script type= "text/javascript">
+
+            function totalPay(hours){
+                 if(hours<=40){
+                    return (hours*15);
+                    }
+                 else
+                 {
+                    return((40*15)+(hours-40)*1.5*15);
+                  }
+        }
+
+        function processPage(){
+            var arr = [];
+            var i = 1;
+
+            while(true){
+                var value = prompt("Please enter the number of hours worked" + (i)+ ":", 0);
+
+                value = parseInt(value);
+
+                if(value ==-1)
+                break;
+
+                arr.push(value);
+
+                i++;
+
+            }
+
+            document.write("<table border=1 align=\"center\">");
+            document.write("<tr>");
+            document.write("<td> Employee # </td>");
+            document.write("<td> Hours Worked </td>");
+            document.write("<td> Gross Pay(in $) </td>");
+            document.write("</tr>");
+
+            for(i=0; i<arr.length; i++){
+                document.write("<tr>");
+                document.write("<td>" + (i+1) + "</td>");
+                document.write("<td>" + arr[i] + "</td>");
+                document.write("<td>" + grossPay(arr[i]).toFixed(2) + "</td>");
+                document.write("</tr>");
+            }
+            document.write("</table");
+            
+        }
+        
+        </script>
+    </head>
+<body onload="process()"></body>
+</html>
+
